@@ -6,32 +6,15 @@ public class Lexer
     private int _indexOfToken;
     private readonly StreamReader _inputStream;
     private char _symbol;
+    private string createEvent = "createevent";
     
     public Lexer(StreamReader file)
     {
         _inputStream = file;
     }
-    private bool ReadNewToken()
+       public void Analyze()
     {
-        if ((_token = _inputStream.Read()) == -1)
-        {
-            return false;
-        }
-        else
-        {
-            _indexOfToken++;
-            return true;
-        }
+        LexerContext context = new LexerContext(new InitialState(), _inputStream);
+        context.Handle(_inputStream);
     }
-    public void Analyze()
-    {
-        while ((ReadNewToken()))
-        {
-            _symbol = (char) _token;
-            Console.WriteLine(_symbol);
-        }
-    }
-    
-    
-
 }
