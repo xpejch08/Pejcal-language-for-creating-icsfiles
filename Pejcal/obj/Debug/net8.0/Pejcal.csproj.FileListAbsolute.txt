@@ -1,0 +1,15 @@
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/bin/Debug/net8.0/Pejcal
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/bin/Debug/net8.0/Pejcal.deps.json
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/bin/Debug/net8.0/Pejcal.runtimeconfig.json
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/bin/Debug/net8.0/Pejcal.dll
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/bin/Debug/net8.0/Pejcal.pdb
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.GeneratedMSBuildEditorConfig.editorconfig
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.AssemblyInfoInputs.cache
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.AssemblyInfo.cs
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.csproj.CoreCompileInputs.cache
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.sourcelink.json
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.dll
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/refint/Pejcal.dll
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.pdb
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/Pejcal.genruntimeconfig.cache
+/home/stepan/Documents/projects/myProjects/Pejcal-language-for-creating-icsfiles/Pejcal/obj/Debug/net8.0/ref/Pejcal.dll
