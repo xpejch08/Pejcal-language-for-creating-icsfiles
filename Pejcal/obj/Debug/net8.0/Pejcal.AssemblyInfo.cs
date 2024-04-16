@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pejcal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f80790f8110394c1d61468b1f005b09b762ec33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a96070cb12ef078cdba5aed7242ce82d54edcff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pejcal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pejcal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,6 +6,7 @@ namespace Pejcal.LexicalAnalysis;
 public class LexerContext
 {
     private ILexerState _state;
+    public List<Event> Events = new List<Event>();
     public char Token = ' ';
     public StreamReader InputStream;
     
@@ -28,17 +29,76 @@ public class LexerContext
 
 public class CreateEventState : BaseLexerState
 {
+    private string _eventName = "";
+    private void CheckNextSpace(LexerContext context)
+    {
+        GetNextToken(context);
+        if (context.Token != ' ')
+        {
+            throw new LexicalException("Lexical error: Expected space, got " + context.Token);
+        }
+    }
+
+    private void CheckName()
+    {
+        if(_eventName.Length == 0)
+        {
+            throw new LexicalException("Lexical error: Expected name, got " + _eventName);
+        }
+    }
+
+    private void AddEventToList(LexerContext context)
+    {
+        context.Events.Add(new Event(_eventName));
+    }
+    private void GetName(LexerContext context)
+    {
+        try
+        {
+            while (GetNextToken(context))
+            {
+                if (PeekForLeftParenthesis(context))
+                {
+                    if (IsLetterOrDigit(context.Token))
+                    {
+                        _eventName += context.Token;
+                    }
+                    break;
+                }
+                if (IsLetterOrDigit(context.Token))
+                {
+                    _eventName += context.Token;
+                }
+            }
+            CheckName();
+            AddEventToList(context);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+    }
     public override void Handle(LexerContext context, StreamReader inputStream)
     {
-        throw new NotImplementedException();
+        CheckNextSpace(context);
+        GetName(context);
     }
 }
 
 public class LetterState: BaseLexerState
 {
     private string _createEvent = "";
-    
-    private bool LoadCreateEvent(LexerContext context)
+
+    private bool CheckCreateEvent()
+    {
+        if(_createEvent == "createevent")
+        {
+            return true;
+        }
+        throw new LexicalException("Lexical error: Expected 'createevent', got " + _createEvent);
+    }
+    private void LoadCreateEvent(LexerContext context)
     {
         _createEvent += context.Token;
         for (int i = 0; i < 10; i++)
@@ -47,20 +107,13 @@ public class LetterState: BaseLexerState
             _createEvent += context.Token;
         }
         _createEvent = _createEvent.ToLower();
-        if (_createEvent == "createevent")
-        {
-            return true;
-        }
-
-        return false;
+        CheckCreateEvent();
     }
     public override void Handle(LexerContext context, StreamReader inputStream)
     {
-        if (!LoadCreateEvent(context))
-        {
-            throw new LexicalException("Lexical error: Expected 'createevent', got " + _createEvent);
-        }
+        LoadCreateEvent(context);
         context.ChangeState(new CreateEventState());
+        context.Handle(inputStream);
     }
 }
 

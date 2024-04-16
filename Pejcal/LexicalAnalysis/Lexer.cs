@@ -14,7 +14,15 @@ public class Lexer
     }
        public void Analyze()
     {
-        LexerContext context = new LexerContext(new InitialState(), _inputStream);
-        context.Handle(_inputStream);
+        try
+        {
+            LexerContext context = new LexerContext(new InitialState(), _inputStream);
+            context.Handle(_inputStream);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }
